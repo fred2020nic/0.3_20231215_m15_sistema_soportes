@@ -52,6 +52,11 @@
 									<a class="dropdown-item" href="./index.php?page=equipment_report_responsible&id=<?php echo $row['id'] ?>">Informe Responsiva Equipo</a>
 									<div class="dropdown-divider"></div>
 
+									<!-- Reportes de sistemas-->
+
+									<a class="dropdown-item" href="./index.php?page=equipment_report_sistem&id=<?php echo $row['id'] ?>">Reporte de Sistemas</a>
+									<div class="dropdown-divider"></div>
+
 
 									<a class="dropdown-item delete" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Eliminar</a>
 								</div>
