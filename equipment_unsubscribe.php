@@ -1,5 +1,8 @@
 <?php
 include 'db_connect.php';
+error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
+
+
 $qry = $conn->query("SELECT * FROM equipments where id = ".$_GET['id'])->fetch_array();
 foreach($qry as $k => $v){
 	$$k = $v;

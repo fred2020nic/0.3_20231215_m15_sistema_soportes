@@ -42,6 +42,7 @@
 								</button>
 								<div class="dropdown-menu" style="">
 									<a class="dropdown-item" href="./index.php?page=edit_equipment&id=<?php echo $row['id'] ?>">Editar</a>
+									
 									<div class="dropdown-divider"></div>
 									<a class="dropdown-item" href="./index.php?page=equipment_unsubscribe&id=<?php echo $row['id'] ?>">Dar de Baja</a>
 									<div class="dropdown-divider"></div>

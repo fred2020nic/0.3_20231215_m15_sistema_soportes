@@ -216,6 +216,13 @@
                 </a>
               </li>
 
+              <li class="nav-item">
+                <a href="index.php?page=equipment_report_sistem_list" class="nav-link nav-new_ticket tree-item">
+                  <i class="fas fa-angle-right nav-icon"></i>
+                  <p>Reprote de Sistemas</p>
+                </a>
+              </li>
+
                <li class="nav-item">
                 <a href="index.php?page=equipment_report_revision_month" class="nav-link nav-new_ticket tree-item">
                   <i class="fas fa-angle-right nav-icon"></i>
