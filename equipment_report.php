@@ -1,6 +1,7 @@
 <?php include 'db_connect.php' ?>
 
 <?php
+error_reporting(0);
 /*
 f7dc6f Amarillo
 5499c7 Azul

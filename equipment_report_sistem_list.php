@@ -13,6 +13,8 @@
 						<th>Dia</th>
 						<th>Mes</th>
 						<th>Año</th>
+						<th>Acciones</th>
+
 					</tr>
 				</thead>
 				<tbody>
@@ -30,6 +32,20 @@
 							<td><b><?php echo $row['dia'] ?></b></td>
                             <td><b><?php echo $row['mes'] ?></b></td>
                             <td><b><?php echo $row['yea'] ?></b></td>
+
+							<td class="text-center">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+									Acción
+								</button>
+								<div class="dropdown-menu" style="">
+								<a class="dropdown-item" href="./index.php?page=equipment_report_sistem_editar&id=<?php echo $row['id'] ?>">Editar</a>
+									
+									<div class="dropdown-divider"></div>
+						
+
+									<a class="dropdown-item" href="./index.php?page=equipment_report_sistem_editar&id=<?php echo $row['id'] ?>">Imprimir</a>
+								</div>
+							</td>
 							
 						</tr>
 					<?php endwhile; ?>

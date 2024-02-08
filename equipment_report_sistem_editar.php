@@ -1,16 +1,20 @@
 <?php
 include 'db_connect.php';
-$qry = $conn->query("SELECT * FROM equipments where id = " . $_GET['id'])->fetch_array();
+$qry = $conn->query("SELECT * FROM equipment_report_sistem where id = " . $_GET['id'])->fetch_array();
 foreach ($qry as $k => $v) {
     $$k = $v;
 }
 
-// var_dump($qry);
+//  var_dump($qry);
+
 ?>
+
+
+
 
 <div class="container col-10">
 <div class="row">
-    <div class="col-sm-9">
+<div class="row">
         <div class="card">
             <div class="card-body">
                 <h1 class="card-title">Reporte de Sstemas</h1>
@@ -23,7 +27,7 @@ foreach ($qry as $k => $v) {
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title col-12">Ordenes de Trabajo</h5>
-                <input class="card-text col-12">
+                <input type="text" name="id" class="form-control form-control-sm alfanumerico"  value="<?php echo isset($id) ? $id : '' ?>">
             </div>
         </div>
     </div>
@@ -81,14 +85,14 @@ foreach ($qry as $k => $v) {
                 <tr>
                     <th>Nombre del Equipo:</th>
                     <td>
-                        <input type="text" class="form-control" placeholder="Impresora" readonly value="<?php echo isset($name) ? $name : '' ?>" name="nombre">
+                        <input type="text" class="form-control" placeholder="Impresora" readonly value="<?php echo isset($nombre) ? $nombre : '' ?>" name="nombre">
                 </tr>
                        
 
                 <tr>
                     <th>N° de Inventario:</th>
                     <td>
-                        <input type="text" class="form-control" placeholder="HAC-001" readonly value="<?php echo isset($number_inventory) ? $number_inventory : '' ?>" name="numero_inv">
+                        <input type="text" class="form-control" placeholder="HAC-001" readonly value="<?php echo isset($numero_inv) ? $numero_inv : '' ?>" name="numero_inv">
                 </td>
                 </tr>
                 <tr>
@@ -97,11 +101,11 @@ foreach ($qry as $k => $v) {
                 </tr>
                 <tr>
                     <th>Modelo:</th>
-                    <td><input type="text" class="form-control" placeholder="M2040" value="<?php echo isset($model) ? $model : '' ?>" name="modelo"></td>
+                    <td><input type="text" class="form-control" placeholder="M2040" value="<?php echo isset($modelo) ? $modelo : '' ?>" name="modelo"></td>
                 </tr>
                 <tr>
                     <th>Marca:</th>
-                    <td><input type="text" class="form-control" placeholder="KYOCERA" value="<?php echo isset($brand) ? $brand : '' ?>" name="marca"></td>
+                    <td><input type="text" class="form-control" placeholder="KYOCERA" value="<?php echo isset($marca) ? $marca : '' ?>" name="marca"></td>
                 </tr>
             </tbody>
         </table>
@@ -110,7 +114,6 @@ foreach ($qry as $k => $v) {
 
 <hr>
 
-<!-- Tercera  seccion-->
 
 <div class="row">
     <!-- Primera Columna -->
@@ -132,11 +135,11 @@ foreach ($qry as $k => $v) {
             </thead>
             <tbody>
                 <tr>
-                    <td><input name="dia" type="text" class="form-control" placeholder="06"></td>
-                    <td><input name="mes" type="text" class="form-control" placeholder="11"></td>
-                    <td><input name="yea" type="text" class="form-control" placeholder="23"></td>
-                    <td><input name="inicio" type="text" class="form-control" placeholder="13:00"></td>
-                    <td><input name="fin" type="text" class="form-control" placeholder="13:10"></td>
+                    <td><input name="dia"  value="<?php echo isset($dia) ? $dia : '' ?>" type="text" class="form-control" placeholder="06"></td>
+                    <td><input name="mes" value="<?php echo isset($mes) ? $mes : '' ?>" type="text" class="form-control" placeholder="11"></td>
+                    <td><input name="yea" value="<?php echo isset($yea) ? $yea : '' ?>"  type="text" class="form-control" placeholder="23"></td>
+                    <td><input name="inicio" value="<?php echo isset($inicio) ? $inicio : '' ?>"  type="text" class="form-control" placeholder="13:00"></td>
+                    <td><input name="fin" value="<?php echo isset($fin) ? $fin : '' ?>" type="text" class="form-control" placeholder="13:10"></td>
                 </tr>
             </tbody>
         </table>
@@ -184,23 +187,23 @@ foreach ($qry as $k => $v) {
     <h3>Descripción Completa del Servicio</h3>
     <div class="form-group">
         <label for="mantenimientoPreventivo">Mantenimiento preventivo:</label>
-        <input name="mantenimientoPreventivo" type="text" class="form-control" id="mantenimientoPreventivo">
+        <input name="mantenimientoPreventivo" value="<?php echo isset($mantenimientoPreventivo) ? $mantenimientoPreventivo : '' ?>" type="text" class="form-control" id="mantenimientoPreventivo">
     </div>
     <div class="form-group">
         <label for="unidad_riesgo">limpieza de Unidad de Riesgo:</label>
-        <input name="unidad_riesgo" type="text" class="form-control" id="unidad_riesgo">
+        <input name="unidad_riesgo"  value="<?php echo isset($unidad_riesgo) ? $unidad_riesgo : '' ?>"  type="text" class="form-control" id="unidad_riesgo">
     </div>
     <div class="form-group">
         <label for="componentes">Limpieza de Componetes toner residual:</label>
-        <input name="componentes" type="text" class="form-control" id="componentes">
+        <input name="componentes" value="<?php echo isset($componentes) ? $componentes : '' ?>"  type="text" class="form-control" id="componentes">
     </div>
     <div class="form-group">
         <label for="toner">Extraccion de toner residual:</label>
-        <input name="toner" type="text" class="form-control" id="toner">
+        <input name="toner" value="<?php echo isset($toner) ? $toner : '' ?>"  type="text" class="form-control" id="toner">
     </div>
     <div class="form-group">
         <label for="impresiom_pruebas">Impresion prueba:</label>
-        <input name="impresiom_pruebas" type="text" class="form-control" id="impresiom_pruebas">
+        <input name="impresiom_pruebas" value="<?php echo isset($impresiom_pruebas) ? $impresiom_pruebas : '' ?>"  type="text" class="form-control" id="impresiom_pruebas">
     </div>
     <!-- Repite el elemento anterior para cada ítem de servicio que necesites -->
     <hr>
@@ -235,10 +238,10 @@ foreach ($qry as $k => $v) {
         </thead>
         <tbody>
             <tr>
-                <td><input name="numero1" type="number" class="form-control" value="1"></td>
-                <td><input name="material1" type="text" class="form-control" placeholder="bolsas para basura"></td>
-                <td><input name="numero2" type="text" class="form-control" placeholder=""></td>
-                <td><input name="material2" type="text" class="form-control" placeholder=""></td>
+                <td><input name="numero1"  value="<?php echo isset($numero1) ? $numero1 : '' ?>" type="number" class="form-control" value="1"></td>
+                <td><input name="material1"  value="<?php echo isset($material1) ? $material1 : '' ?>" type="text" class="form-control" placeholder="bolsas para basura"></td>
+                <td><input name="numero2"  value="<?php echo isset($numero2) ? $numero2 : '' ?>" type="text" class="form-control" placeholder=""></td>
+                <td><input name="material2"  value="<?php echo isset($material2) ? $material2 : '' ?>" type="text" class="form-control" placeholder=""></td>
             </tr>
             <tr>
                 <td><input type="number" class="form-control" value="1"></td>
@@ -289,15 +292,31 @@ foreach ($qry as $k => $v) {
 
 <hr>
 <div class="col-lg-12 text-right justify-content-center d-flex">
-    <button type="button" class="btn btn-primary" onclick="equipment_report_sistem_add()">Agregar</button>
+    <button type="button" class="btn btn-primary" onclick="equipment_report_sistem_edit()">Ediatr</button>
     <button class="btn btn-secondary" type="button" onclick="location.href = 'index.php?page=equipment_list'">Cancelar</button>
+ 
+    <button id="imprimirBtn">Imprimir</button>
+                  
+           
 </div>
 
 </div>
 
 <script>
+
+
+                
+                    // Función para manejar el clic en el botón de impresión
+                    document.getElementById("imprimirBtn").addEventListener("click", function() {
+                        window.print(); // Abre la ventana de impresión del navegador
+                    });
+                
+
+
     // Añadir datos para enviarlos a tabla detalle de encuestas
-    function equipment_report_sistem_add() {
+    function equipment_report_sistem_edit() {
+        var id = $("input[name='id']").val();
+        // alert('hola');
         // Validamos los datos del formulario
         var nombre = $("input[name='nombre']").val();
         //   if (name === "") {
@@ -341,7 +360,7 @@ foreach ($qry as $k => $v) {
         //     alert("El campo 'id_user' es obligatorio");
         //     return;
         //   }
-
+        console.log("Id:", id);
         console.log("Nombre:", nombre);
         console.log("N° de Inventario:", numero_inv);
 
@@ -371,7 +390,8 @@ foreach ($qry as $k => $v) {
         
         // Enviamos la solicitud POST
 
-        $.post("equipment_report_sistem_add.php", {
+        $.post("equipment_report_sistem_edit.php", {
+            id: id,
             nombre: nombre,
             numero_inv:numero_inv,
 
@@ -404,9 +424,11 @@ foreach ($qry as $k => $v) {
         }, function(data, status) {
             // Procesamos la respuesta
             if (status === "success") {
+              alert('Edia')
                 // Registro agregado correctamente
                 //   alert("Registro agregado correctamente 2024");
                 window.location.href = 'index.php?page=equipment_report_sistem_list';
+
             } else {
                 // Error al agregar el registro
                 alert("Error al agregar el registro");
