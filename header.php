@@ -5,7 +5,7 @@
   ob_start();
   $title = isset($_GET['page']) ? ucwords(str_replace("_", ' ', $_GET['page'])) : "Home";
   ?>
-  <title><?php echo $title ?> | Sistema de Soporte Técnico en PHP y MySQL
+  <title><?php echo $title ?> | Sistema de Soporte Técnico en PHP y MySQL dvhg  2024
   </title>
   <?php ob_end_flush() ?>
 
