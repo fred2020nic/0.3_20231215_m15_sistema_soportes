@@ -7,7 +7,7 @@
         <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
 
         <div class="info-box-content">
-          <span class="info-box-text">Total de Clientes dvhg</span>
+          <span class="info-box-text">Total de Clientes dvhg 2024-2025</span>
           <span class="info-box-number">
             <?php echo $conn->query("SELECT * FROM customers")->num_rows; ?>
           </span>
